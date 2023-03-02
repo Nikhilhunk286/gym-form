@@ -1,0 +1,45 @@
+<!--Initially index.pug was pug only but to write HTML code in it: Below in the task bar, click on PUG and go to lnaguage mode and click on HTML and type !,then ENTER,automatically the whole HTML format will open up.-->
+<!--NOTE: This file will still be considered as pug file and indentation will always be considered.So we have to make sure it's properly followed or not.Although HTML code in it will be executed while rendering(displaying) this file on localhost but it will be rendered as pug file only, so if  there is a problem in indentation it can give error also.-->
+<!--NOTE: We use # for those part,where we want to give value directly.Here our arguments or parameters which we gave in our JS file are directly passed here.-->
+<!--We can also say by using {#..}  we can create an HTML template with placeholders for dynamic content and then have dynamic values inserted into the page on the server.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>#{title}</title>
+    <!--Here we have included style.css file and we have used ..,so that control can come out of views directory while including style.css file and go to dir. or folder static and take style.css file.-->
+    style
+        include ../static/style.css
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+
+        <h1>Get  GOLD GYM Membership for $6.</h1>
+        <!--NOTE: To add plain text without tags, use pipes '|'.-->
+        <p>
+        |Give your details in the below form.</p><!--Here we don't have <p>,so use | here and also try to keep it just below <p>, for better indentation.-->
+        <p>#{content}</p>
+
+        <form action="/" id="contact" method="post">
+            <input type="text" name="name" id="name" placeholder="Enter your Name:">  
+            <input type="text" name="age" id="age" placeholder="Enter your age:">
+            <input type="text" name="gender" id="gender" placeholder="Enter your Gender:">
+            <textarea name="address" id="address" cols="30" rows ="10" placeholder="Enter your address"></textarea>
+            <textarea name="more" id="more" cols="30" rows ="10" placeholder="More about you"></textarea>
+            <button class="btn">submit</button>
+        </form>
+        </div>
+</body>
+</html>
